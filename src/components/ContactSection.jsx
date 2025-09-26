@@ -54,18 +54,18 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 bg-card shadow-md rounded-2xl p-6 hover:shadow-lg transition">
+            {/* <div className="flex items-center gap-4 bg-card shadow-md rounded-2xl p-6 hover:shadow-lg transition">
               <Phone className="text-secondary" size={28} />
-              <div>
+              {/*<div>
                 <h4 className="font-semibold">Phone</h4>
-                <a
+                {/*<a
                   href="tel:+919304561784"
                   className="text-yellow-800 hover:text-primary"
                 >
                   +91 93045 61784
-                </a>
+                </a>*
               </div>
-            </div>
+            </div>*/}
 
             <div className="flex items-center gap-4 bg-card shadow-md rounded-2xl p-6 hover:shadow-lg transition">
               <MapPin className="text-secondary" size={28} />
