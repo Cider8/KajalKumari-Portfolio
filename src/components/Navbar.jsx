@@ -1,20 +1,21 @@
 import { href } from "react-router-dom"
 import { cn } from "../lib/utils"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-    {name: "Home",href: "#hero"},
-    {name: "about",href: "#about"},
-    {name: "skills",href: "#skills"},
-    {name: "projects",href: "#projects"},
-    {name: "contact",href: "#contact"},
+    {name: "Home",href: "#hero", id: "hero"},
+    {name: "About",href: "#about", id: "about"},
+    {name: "Skills",href: "#skills", id: "skills"},
+    {name: "Projects",href: "#projects", id: "projects"},
+    {name: "Contact",href: "#contact", id: "contact"},
 ]
 
 export const Navbar = () =>{
     const [isScrolled,setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("hero");
     
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +26,39 @@ export const Navbar = () =>{
         return () => window.removeEventListener("scroll", handleScroll);
     },[])
 
+    // Scrollspy: highlight active section
+    useEffect(() => {
+        const sectionIds = navItems.map(n => n.id);
+        const observers = [];
+        sectionIds.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(id);
+                    }
+                },
+                { root: null, rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+        return () => observers.forEach(o => o.disconnect());
+    }, []);
+
+    const handleNavClick = useCallback((e, href) => {
+        e.preventDefault();
+        const targetId = href.replace('#','');
+        const el = document.getElementById(targetId);
+        if (el) {
+            const yOffset = 80; // approx navbar height
+            const y = el.getBoundingClientRect().top + window.pageYOffset - yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            setIsMenuOpen(false);
+        }
+    }, []);
+
     return (
         <nav 
         className={cn(
@@ -33,20 +67,28 @@ export const Navbar = () =>{
             )}
         >
             <div className="container flex items-center justify-between">
-                <a className="text-xl font-bold text-yellow-600 flex item-center" href="#hero">
-                    <span className="relative z-10">
-                        <span className="text-foreground">KajalKumari's </span>
-                        <span className="text-yellow-600">Portfolio</span>
+                <a className="text-xl font-bold text-yellow-600 flex items-center" href="#hero" onClick={(e) => handleNavClick(e, '#hero')}>
+                    <span className="relative z-10 inline-flex items-center gap-2">
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground font-extrabold">KK</span>
+                        <span className="text-foreground hidden sm:inline">Kajal K.</span>
                     </span>
                 </a>
 
                 {/* desktop version*/}
-                <div className="hidden md:flex space-x-8">
+                <div className="hidden md:flex items-center gap-6">
                     {navItems.map((item,key) => (
-                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300 focus-ring">
+                        <a key={key} href={item.href} onClick={(e) => handleNavClick(e, item.href)}
+                           className={cn(
+                               "transition-colors duration-300 focus-ring",
+                               activeSection === item.id ? "text-primary font-semibold" : "text-foreground/80 hover:text-primary"
+                           )}
+                        >
                             {item.name}
                         </a>
                     ))}
+                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cosmic-button focus-ring py-2">
+                        Let's Talk
+                    </a>
                 </div>
                 {/* mobile version */}
                 <button onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -66,13 +108,19 @@ export const Navbar = () =>{
                         {navItems.map((item,key) => (
                             <a 
                                 key={key} 
-                                href={item.href} 
-                                className="text-foreground/80 hover:text-primary transition-colors duration-300 focus-ring"
-                                onClick={() => setIsMenuOpen(false)}
+                                href={item.href}
+                                className={cn(
+                                  "transition-colors duration-300 focus-ring",
+                                  activeSection === item.id ? "text-primary font-semibold" : "text-foreground/80 hover:text-primary"
+                                )}
+                                onClick={(e) => handleNavClick(e, item.href)}
                                 >
                                 {item.name}
                             </a>
                         ))}
+                        <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cosmic-button focus-ring py-2">
+                            Let's Talk
+                        </a>
                     </div>
                 </div>
                 
@@ -80,3 +128,4 @@ export const Navbar = () =>{
         </nav>
     );
 }
+
