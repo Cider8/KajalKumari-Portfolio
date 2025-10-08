@@ -15,7 +15,7 @@ export const HeroSection = () =>{
                         />
                     </div>
                 <div className="space-y-6">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-light">
+                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
                         <span className="opacity-0 animate-fade-in">Hi, I'm </span>
                         <span className="text-primary opacity-0 animate-fade-in-delay-1">
                             {" "}
@@ -26,17 +26,14 @@ export const HeroSection = () =>{
                             Kumari
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground max-2-xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        A curious learner, problem solver, and passionate <span className="font-semibold text-primary">MERN Stack Developer</span>, 
-                        I enjoy crafting responsive web applications that seamlessly blend 
-                        clean code with creative design. My goal is to build user-friendly 
-                        and impactful solutions that deliver meaningful digital experiences 
-                        to inspire and engage users. 
+                    <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+                        MERN developer focused on building clean, accessible, and responsive web apps.
+                        I turn complex ideas into fast, user-friendly experiences with a strong eye for detail.
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                        <a href="#projects" className="cosmic-button">
-                            view My Work
+                        <a href="#projects" className="cosmic-button focus-ring">
+                            View My Work
                         </a>
                     </div>
                 </div>

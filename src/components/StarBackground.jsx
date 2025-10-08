@@ -4,14 +4,19 @@ import { useState, useEffect } from "react";
 // id,size,x,y,delay,duration , meteor contains
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
-  const [meteors,setMeteors] = useState([])
+  const [orbs, setOrbs] = useState([])
+  const [blobs] = useState([
+    { id: 'b1', color: 'from-violet-500/12 to-fuchsia-500/12', top: '12%', left: '6%', size: 320 },
+    { id: 'b2', color: 'from-cyan-500/12 to-blue-500/12', top: '62%', left: '68%', size: 360 },
+  ]);
 
   // Generate stars on mount and on resize
   useEffect(() => {
     generateStars();
-    generatemeteor();
+    generateOrbs();
     const handleResize = () =>{
         generateStars();
+        generateOrbs();
     }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -19,7 +24,7 @@ export const StarBackground = () => {
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 1500
+      (window.innerWidth * window.innerHeight) / (document.documentElement.classList.contains('dark') ? 5000 : 7000)
     );
 
     const newStars = [];
@@ -36,27 +41,50 @@ export const StarBackground = () => {
     setStars(newStars);
   };
 
-    const generatemeteor = () => {
-    const numberOfMeteors = 4
-
-    const newMeteors = [];
-    for (let i = 0; i < numberOfMeteors; i++) {
-      newMeteors.push({
-        id: i,
-        size: Math.random() * 2 + 1,
-        x: Math.random() * 100,
-        y: Math.random() * 20,
-        delay: Math.random() * 15,
-        animationduration: Math.random() * 3 + 3,
-      });
-    }
-    setMeteors(newMeteors);
+  const generateOrbs = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    const numberOfOrbs = isDark ? 3 : 4;
+    const colors = isDark
+      ? [
+          'from-fuchsia-500/10 to-purple-500/10',
+          'from-blue-500/10 to-cyan-500/10',
+          'from-emerald-500/10 to-teal-500/10',
+        ]
+      : [
+          'from-fuchsia-500/15 to-purple-500/15',
+          'from-blue-500/15 to-cyan-500/15',
+          'from-amber-500/15 to-orange-500/15',
+          'from-emerald-500/15 to-teal-500/15',
+        ];
+    const newOrbs = Array.from({ length: numberOfOrbs }).map((_, i) => ({
+      id: `o${i}`,
+      color: colors[i % colors.length],
+      size: Math.round((isDark ? 160 : 200) + Math.random() * (isDark ? 80 : 120)),
+      x: Math.random() * 80 + 10,
+      y: Math.random() * 60 + 10,
+      duration: 8 + Math.random() * 6,
+      delay: Math.random() * 4,
+    }));
+    setOrbs(newOrbs);
   };
 
   
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* soft gradient blobs */}
+      {blobs.map((b) => (
+        <div
+          key={b.id}
+          className={`absolute rounded-full blur-3xl bg-gradient-to-br ${b.color}`}
+          style={{
+            width: b.size + 'px',
+            height: b.size + 'px',
+            top: b.top,
+            left: b.left,
+          }}
+        />
+      ))}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -72,19 +100,19 @@ export const StarBackground = () => {
         ></div>
       ))}
 
-      {meteors.map((meteor) => (
+      {orbs.map((o) => (
         <div
-          key={meteor.id}
-          className="meteor animate-meteor"
+          key={o.id}
+          className={`absolute rounded-full blur-2xl bg-gradient-to-br ${o.color}`}
           style={{
-            width: meteor.size*50 + "px",
-            height: meteor.size + "px",
-            left: meteor.x + "%",
-            top: meteor.y + "%",
-            animationdelay: meteor.delay,
-            animationduration: meteor.animationduration + "s",
+            width: o.size + 'px',
+            height: o.size + 'px',
+            left: o.x + '%',
+            top: o.y + '%',
+            opacity: 0.7,
+            animation: `float ${o.duration}s ease-in-out ${o.delay}s infinite`,
           }}
-        ></div>
+        />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 import { toast } from "react-toastify";
 import emailjs from "@emailjs/browser";
 import { cn } from "../lib/utils";
@@ -7,20 +7,10 @@ import { useToast } from "../../hooks/use-toast";
 
 
 export const ContactSection = () => {
-
-    // const {toast} =useToast()
-    
-    // const [isSubmitting, setIsSubmitting] = useState(false);
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setTimeout(() => {
-    //         toast({
-    //             title: "Message sent!",
-    //             description: "Thankyou, get back you soon"
-    //         });
-    //     },1500)
-    // }
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   return (
     <section id="contact" className="py-24 px-6 lg:px-24 bg-secondary/30">
@@ -31,7 +21,7 @@ export const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Get In <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             I’m always open to new opportunities and project discussions.  
             Feel free to reach out.
           </p>
@@ -77,7 +67,7 @@ export const ContactSection = () => {
           </div>
 
           {/* Right side - Socials */}
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-4 button-surface p-4 rounded-2xl">
                 <a
                     href="https://github.com/Cider8"
                     target="_blank"
@@ -100,64 +90,103 @@ export const ContactSection = () => {
             </div>
         </div>
 
-        {/* Contact Form
-        <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6"> Send Message</h3>
-            
-            <form className="space-y-6">
-                <div>
-                    <label htmlFor="name"> Your Name </label>
+        {/* Contact Form */}
+       {/* <div className="bg-card p-8 rounded-2xl shadow-xs mt-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center"> Send Message</h3>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+                onSubmit={async (e) => {
+                    e.preventDefault();
+                    if (!serviceId || !templateId || !publicKey) {
+                        toast.error("Email service not configured. Please set VITE_EMAILJS_* env vars.");
+                        return;
+                    }
+                    const form = e.currentTarget;
+                    const formData = new FormData(form);
+                    const name = String(formData.get('name') || '').trim();
+                    const email = String(formData.get('email') || '').trim();
+                    const message = String(formData.get('message') || '').trim();
+
+                    if (!name || !email || !message) {
+                        toast.error("Please fill in all fields.");
+                        return;
+                    }
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        toast.error("Please enter a valid email address.");
+                        return;
+                    }
+                    setIsSubmitting(true);
+                    try {
+                        await emailjs.send(
+                            serviceId,
+                            templateId,
+                            {
+                                from_name: name,
+                                reply_to: email,
+                                message: message,
+                            },
+                            { publicKey }
+                        );
+                        toast.success("Message sent! Thanks for reaching out.");
+                        form.reset();
+                    } catch (err) {
+                        console.error("EmailJS error:", err);
+                        toast.error("Failed to send. Please try again later.");
+                    } finally {
+                        setIsSubmitting(false);
+                    }
+                }}
+            >
+                <div className="md:col-span-1">
+                    <label htmlFor="name" className="block text-sm mb-2"> Your Name </label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         required
-                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
-                        placeholder="Krisha.."
-                    >
-                    </input>
+                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus-ring"
+                        placeholder="Your name"
+                    />
                 </div>
 
-                <div>
-                    <label htmlFor="email"> Your Email </label>
+                <div className="md:col-span-1">
+                    <label htmlFor="email" className="block text-sm mb-2"> Your Email </label>
                     <input
-                        type="text"
+                        type="email"
                         id="email"
                         name="email"
                         required
-                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
-                        placeholder="email@gamil.com"
-                    >
-                    </input>
+                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus-ring"
+                        placeholder="you@example.com"
+                    />
                 </div>
 
-                <div>
+                <div className="md:col-span-2">
                     <label 
                         htmlFor="message" 
-                        className="block text-sm font-medium mb-2">
-                        {" "}
+                        className="block text-sm mb-2">
                         Your Message
                     </label>
                     <textarea
-                        type="text"
                         id="message"
                         name="message"
                         required
-                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary resize-none"
-                        placeholder="Write something.."
-                    >
-                    </textarea>
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-md border border-input bg-background focus-ring resize-y"
+                        placeholder="Write something..."
+                    />
                 </div>
 
-                <button type="submit" className={cn("cosmiic-button w-full flex items-center gap-2",
-                    )}
-                >
-                    Send  Message
-                </button>
+                <div className="md:col-span-2">
+                    <button type="submit" disabled={isSubmitting} className="cosmic-button focus-ring w-full md:w-auto flex items-center gap-2 justify-center disabled:opacity-70 disabled:cursor-not-allowed">
+                        <Send className="h-4 w-4" />
+                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                    </button>
+                </div>
 
-            </form> */}
+            </form>
 
-        {/* </div> */}
+        </div>*/}
       </div>
     </section>
   );

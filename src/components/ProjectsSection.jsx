@@ -4,7 +4,7 @@ const projects = [
     {
         id: 1,
         title: "Book-Store ecommerce website",
-        description: "A ecommerce website where we can buy book of different types such as Adventures, Horrors etc",
+        description: "E-commerce app to browse and buy books across genres with auth and cart.",
         image: "/projects/project1.png",
         tags: ["React", "tailwind.css", "Mongodb","Node.js","express","firebase"],
         demoUrl: "#",
@@ -14,7 +14,7 @@ const projects = [
     {
         id: 2,
         title: "Knowtify-mern",
-        description: "An Edtech Platform built using Mern that online tech Courses, It's a team project , I have worked on backend part",
+        description: "EdTech platform for online tech courses; I contributed backend APIs and DB.",
         image: "/projects/project2.png",
         tags: ["React", "tailwind.css", "Mongodb","Node.js","express"],
         demoUrl: "https://frontend-main-beige.vercel.app/",
@@ -24,7 +24,7 @@ const projects = [
     {
         id: 3,
         title: "Book-finder",
-        description: "A react+vite application that lets you search booking using the aopen library Api.",
+        description: "Vite + React app to search books via Open Library API with instant results.",
         image: "/projects/project3.png",
         tags: ["React", "tailwind.css"],
         demoUrl: "https://book-finder-nu-woad.vercel.app/",
@@ -34,7 +34,7 @@ const projects = [
     {
         id: 4,
         title: "Autosave_blog ",
-        description: "This website provide features like crud operation & Autosave feature",
+        description: "Blog app with CRUD and auto-save drafts for a smooth writing flow.",
         image: "/projects/project4.png",
         tags: ["React", "tailwind.css", "Mongodb","Node.js","express"],
         demoUrl: " https://blog-mern-tau.vercel.app/",
@@ -44,7 +44,7 @@ const projects = [
     {
         id: 5,
         title: "Resq+ ",
-        description: "A web-cum app based solution built under Hack-heritage-21 focusing the Diaster Management track, this app built under 6 member where I have worked as Backend part",
+        description: "Disaster response app built in a hackathon; I owned backend integration.",
         image: "/projects/project5.png",
         tags: ["React", "tailwind.css", "Mongodb","Node.js","express","firebase","flutter"],
         demoUrl: "#",
@@ -54,7 +54,7 @@ const projects = [
     {
         id: 6,
         title: "Course_selling backend",
-        description: "Developed backend part of Course selling App",
+        description: "Backend for course selling app: auth, courses, payments-ready APIs.",
         image: "#",
         tags: ["Mongodb","Node.js","express"],
         demoUrl: "#",
@@ -81,18 +81,18 @@ export const ProjectsSection = () =>{
                 My <span className="text-primary">Projects</span>
                 </h2>
                 {/* Intro Paragraph */}
-                <p className="text-center text-grey-600 max-w-3xl mx-auto mb-12">
+                <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
                 Here are some of the projects I have worked on, ranging from full-stack
                 web applications to small frontend apps. These projects showcase my
                 skills in the MERN stack, problem-solving, and building user-friendly
                 interfaces.
                 </p>
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        className="bg-card rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                        className="bg-card rounded-2xl shadow-md overflow-hidden border border-border hover:shadow-xl transition-shadow duration-300 flex flex-col"
                     >
                     {/* Image */}
                     {project.image !== "#" ? (
@@ -110,7 +110,7 @@ export const ProjectsSection = () =>{
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-grow">
                         <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
-                        <p className="text-sm text-yellow-600 mb-4 flex-grow">
+                        <p className="text-sm text-muted-foreground mb-4 flex-grow line-clamp-2">
                         {project.description}
                         </p>
 
@@ -119,7 +119,7 @@ export const ProjectsSection = () =>{
                         {project.tags.map((tag, idx) => (
                             <span
                             key={idx}
-                            className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full"
+                                    className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full"
                             >
                             {tag}
                             </span>
@@ -127,14 +127,14 @@ export const ProjectsSection = () =>{
                         </div>
 
                         {/* Buttons */}
-                        <div className="flex flex-col gap-3 mt-auto">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-auto button-surface p-4">
                             {/* Demo Button*/}
                             <div className="flex justify-start">
                                 <a
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary/90 transition"
+                                    className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition focus-ring"
                                 >
                                 Demo
                                 </a>
@@ -146,7 +146,7 @@ export const ProjectsSection = () =>{
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg text-sm hover:bg-gray-700 transition"
+                                    className="flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg text-sm hover:opacity-90 transition focus-ring"
                                 >
                                 <Github size={16} />
                                 <span>Check Code on GitHub</span>
