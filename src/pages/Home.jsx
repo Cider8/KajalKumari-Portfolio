@@ -11,6 +11,7 @@ import { ContactSection } from '../components/ContactSection'
 import { Footer } from '../components/Footer'
 import { TechStack } from '../components/TechStack'
 import { CVSection } from '../components/CVSection'
+import { FreelancingSection } from '../components/FreelancingSection'
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
           <SkillsSection/>
           <TechStack/>
           <ProjectsSection/>
+          <FreelancingSection/>
           <ContactSection/>
         </main>
 

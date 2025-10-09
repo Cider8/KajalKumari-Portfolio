@@ -2,44 +2,44 @@ import { useState } from "react";
 import { cn } from "../lib/utils";
 
 const skills =[
-    {name: "DSA", level: 75, category:"all"},
+    {name: "DSA", level: 75, category:"All"},
     //frontend
-    {name: "HTML/CSS", level: 80, category : "frontend"},
-    {name: "JavaScript", level: 80, category : "frontend"},
-    {name: "React", level: 90, category : "frontend"},
-    {name: "TypeScript", level: 40, category : "frontend"},
-    {name: "Tailwind CSS", level: 80, category : "frontend"},
+    {name: "HTML/CSS", level: 80, category : "Frontend"},
+    {name: "JavaScript", level: 80, category : "Frontend"},
+    {name: "React", level: 90, category : "Frontend"},
+    {name: "TypeScript", level: 40, category : "Frontend"},
+    {name: "Tailwind CSS", level: 80, category : "Frontend"},
 
     //backend
-    {name: "Node.js", level: 85, category : "backend"},
-    {name: "Express.js", level: 85, category : "backend"},
-    {name: "MongoDb", level: 90, category : "backend"},
+    {name: "Node.js", level: 85, category : "Backend"},
+    {name: "Express.js", level: 85, category : "Backend"},
+    {name: "MongoDB", level: 90, category : "Backend"},
     
     // Tools
-     {name: "Git/Github", level: 80, category : "tools"},
-     {name: "VS code", level: 95, category: "tools"},
-     {name: "POSTMAN",level: 85,category: "tools"},
-     {name: "Microsoft PowerAutomate",level: 85, category: "tools"},
+     {name: "Git/GitHub", level: 80, category : "Tools"},
+     {name: "VS Code", level: 95, category: "Tools"},
+     {name: "Postman",level: 85,category: "Tools"},
+     {name: "Power Automate",level: 85, category: "Tools"},
 
     //language
-     {name: "C++", level: 85, category: "language"},
-     {name: "SQL", level: 80, category: "language"},
-     {name: "Java", level: 55, category: "language"},
+     {name: "C++", level: 85, category: "Language"},
+     {name: "SQL", level: 80, category: "Language"},
+     {name: "Java", level: 55, category: "Language"},
 
      //all
-     {name: "Operating System", level: 70 , category: "all"},
-     {name: "Oops", level: 75, category: "all"},
+     {name: "Operating System", level: 70 , category: "All"},
+     {name: "OOP", level: 75, category: "All"},
 
     
 ];
 
-const categories = ["all","frontend","backend","tools","language"]
+const categories = ["All","Frontend","Backend","Tools","Language"]
 
 
 export const SkillsSection = () =>{
-    const [activeCategory,setActiveCategory] = useState("all");
+    const [activeCategory,setActiveCategory] = useState("All");
     const filteredSkills = skills.filter(
-        (skill) => activeCategory === "all" || skill.category === activeCategory
+        (skill) => activeCategory === "All" || skill.category === activeCategory
     );
     
     return (
@@ -49,16 +49,16 @@ export const SkillsSection = () =>{
                     My <span className = "text-primary">Skills</span>
                 </h2>
 
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {categories.map((category,key)=>(
                         <button
                             key={key}
                             onClick={() => setActiveCategory(category)}
                             className={cn(
-                                "px-5 py-2 rounded-full transition-colors duration-300 captalize",
+                                "px-4 py-2 rounded-full transition-all duration-300 border-2 focus-ring",
                                 activeCategory === category ? 
-                                    "bg-primary text-primary-foreground" 
-                                    : "bg-background/70 text-foreground hover:bg-secondary"
+                                    "bg-primary text-primary-foreground border-primary shadow-md" 
+                                    : "bg-background/70 text-foreground hover:bg-secondary border-border hover:border-primary/50"
                             )}
                             
                         >
@@ -67,25 +67,25 @@ export const SkillsSection = () =>{
                     ))}
 
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {filteredSkills.map((skill, key) => (
                         <div
                             key={key}
-                            className="bg-card p-6 rounded-lg shadow-xs card-hover"
+                            className="bg-card p-4 rounded-xl shadow-sm border-2 border-border hover:border-primary/50 transition-all duration-300 card-hover group cursor-pointer"
                         >
-                            <div className="text-left mb-4">
-                            <h3 className="font-semibold text-lg">{skill.name}</h3>
+                            <div className="text-center mb-3">
+                                <h3 className="font-semibold text-sm md:text-base group-hover:text-primary transition-colors">{skill.name}</h3>
                             </div>
-                            <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                            <div
-                                className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease_out]"
-                                style={{ width: skill.level + "%" }}
-                            ></div>
+                            <div className="w-full bg-secondary/50 h-1.5 rounded-full overflow-hidden mb-2">
+                                <div
+                                    className="bg-primary h-1.5 rounded-full origin-left transition-all duration-1000 ease-out"
+                                    style={{ width: skill.level + "%" }}
+                                ></div>
                             </div>
-                            <div className="text-right mt-1">
-                            <span className="text-sm text-muted-foreground">
-                                {skill.level}%
-                            </span>
+                            <div className="text-center">
+                                <span className="text-xs text-muted-foreground font-medium">
+                                    {skill.level}%
+                                </span>
                             </div>
                         </div>
                     ))}

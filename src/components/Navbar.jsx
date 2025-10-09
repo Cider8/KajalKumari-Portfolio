@@ -9,6 +9,7 @@ const navItems = [
     {name: "About",href: "#about", id: "about"},
     {name: "Skills",href: "#skills", id: "skills"},
     {name: "Projects",href: "#projects", id: "projects"},
+    {name: "Freelancing",href: "#Freelancing", id: "Freelancing"},
     {name: "Contact",href: "#contact", id: "contact"},
 ]
 
@@ -87,7 +88,7 @@ export const Navbar = () =>{
                         </a>
                     ))}
                     <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cosmic-button focus-ring py-2">
-                        Let's Talk
+                        Hire Me
                     </a>
                 </div>
                 {/* mobile version */}
@@ -113,13 +114,13 @@ export const Navbar = () =>{
                                   "transition-colors duration-300 focus-ring",
                                   activeSection === item.id ? "text-primary font-semibold" : "text-foreground/80 hover:text-primary"
                                 )}
-                                onClick={(e) => handleNavClick(e, item.href)}
+                                onClick={(e) => handleNavClick(e, item.href)} 
                                 >
                                 {item.name}
                             </a>
                         ))}
                         <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="cosmic-button focus-ring py-2">
-                            Let's Talk
+                            Hire Me
                         </a>
                     </div>
                 </div>
