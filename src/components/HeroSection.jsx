@@ -27,8 +27,8 @@ export const HeroSection = () =>{
                         </span>
                     </h1>
                     <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        MERN developer focused on building clean, accessible, and responsive web apps.
-                        I turn complex ideas into fast, user-friendly experiences with a strong eye for detail.
+                        MERN Stack Developer or Full stack Web Developer focused on building clean, accessible, and responsive web applications.
+                        Currently seeking opportunities for Software Development roles and freelance projects.
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
