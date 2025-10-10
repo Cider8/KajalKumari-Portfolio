@@ -1,5 +1,5 @@
 export const CVSection = () => {
-    const cvPath = "/Kajal_Kumari_resume.pdf"; // Place your PDF in public/ with this name
+    const cvPath = "/Kajal_Kri_resume.pdf"; 
     return (
         <section id="cv" className="py-20 px-6 lg:px-24">
             <div className="container mx-auto max-w-4xl text-center">
