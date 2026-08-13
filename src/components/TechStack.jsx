@@ -1,4 +1,4 @@
-import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTypescript, SiTailwindcss, SiGit, SiVite, SiPostman, SiVercel, SiRender} from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiExpress, SiMongodb, SiTypescript, SiTailwindcss, SiGit, SiVite, SiPostman, SiVercel, SiRender, SiMicrosoft} from 'react-icons/si';
 import { FaDatabase, FaSpider } from 'react-icons/fa';
 
 export const TechStack = () => {
@@ -14,7 +14,7 @@ export const TechStack = () => {
         { name: "Postman", Icon: SiPostman },
         { name: "Vercel", Icon: SiVercel },
         { name: "Render", Icon: SiRender },
-       // { name: "Power Automate", Icon: SiMicrosoft },
+       { name: "Power Automate", Icon: SiMicrosoft },
        // { name: "Data Scraper", Icon: FaSpider },
     ];
 

@@ -15,7 +15,7 @@ const skills = [
     { name: "HTML/CSS", level: 80, category: "Frontend" },
     { name: "Tailwind CSS", level: 80, category: "Frontend" },
     { name: "Vite", level: 70, category: "Frontend" },
-    { name: "React Router", level: 75, category: "Frontend" },
+    { name: "React Router", level: 65, category: "Frontend" },
 
     // Backend & Data
     { name: "Node.js", level: 85, category: "Backend & Data" },
@@ -23,8 +23,8 @@ const skills = [
     { name: "MongoDB", level: 90, category: "Backend & Data" },
     { name: "REST APIs", level: 85, category: "Backend & Data" },
     { name: "JWT", level: 75, category: "Backend & Data" },
-    { name: "AWS Lambda", level: 60, category: "Backend & Data" },
-    { name: "Go", level: 55, category: "Backend & Data" },
+    { name: "AWS Lambda", level: 30, category: "Backend & Data" },
+    { name: "Go", level: 40, category: "Backend & Data" },
 
     // Tools
     { name: "Git", level: 85, category: "Tools" },

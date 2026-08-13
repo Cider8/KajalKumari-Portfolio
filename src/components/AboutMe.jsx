@@ -11,18 +11,18 @@ export const AboutMe = () =>{
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
                     <div className="space-y-6">
-                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Passionate Software Engineer</h3>
+                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Full-Stack Software Engineer</h3>
 
                         <p className="text-muted-foreground">
-                            I am a results-driven <span className="font-semibold text-primary">Software Development Engineer</span> with experience building scalable Frontend systems and full-stack applications. I focus on writing clean, maintainable code and designing reliable services.
+                            I'm a <span className="font-semibold text-primary">Software Engineer I at SysAmplify Technologies</span>, where I build scalable frontend systems and full-stack applications with React, TypeScript, Node.js, Go, and AWS (DynamoDB, S3). I architected a React/TypeScript admin platform managing 100,000+ user records and independently own the frontend and QA of an internal Java-based test-automation product, working directly under the CEO's guidance.
                         </p>
 
                         <p className="text-muted-foreground">
-                            My background includes contributing to production projects and participating in hackathons like <span className="font-semibold">Smart India Hackathon</span>, where I helped build <span className="font-semibold">RESQ+</span>, a real-time disaster management tool. These experiences strengthened my algorithmic problem-solving, system design, and collaboration skills.
+                            My background includes production engineering work and hackathons like <span className="font-semibold">Smart India Hackathon</span>, where I helped build <span className="font-semibold">RESQ+</span>, a real-time disaster management tool. I've also solved 500+ problems on LeetCode (1600+ rating) and reached the semifinals of Flipkart GRID 5.0 and the Tata Imagination Challenge — experiences that sharpened my algorithmic problem-solving, system design, and collaboration skills.
                         </p>
 
                         <p className="text-muted-foreground">
-                            I enjoy working on backend engineering, API design, performance optimization, and scalable architectures. I am actively seeking SDE roles where I can impact product reliability and scalability.
+                            I enjoy backend engineering, API design, performance optimization, and scalable architecture — recently cutting a core API's query pattern from N+1 to a single batched call. I'm always open to SDE opportunities where I can keep driving product reliability and scale.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 button-surface p-4 justify-center md:justify-start">
                             <a href='#contact' className="cosmic-button focus-ring flex items-center gap-2 justify-center">
@@ -45,30 +45,28 @@ export const AboutMe = () =>{
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg">Web Development</h4>
                                     <p className="text-muted-foreground">
-                                        Creating responsive website & Web application with
-                                        modern frameworks using the Mern stack.
+                                        Building responsive websites and full-stack web applications
+                                        with React, TypeScript, Node.js, and cloud-native REST APIs on AWS.
                                     </p>
-                                </div>
-                                
-                            </div>
-                        </div>
-            
-                        <div className="gradient-border p-6 card-hover">
-                            <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-full bg-primary/10">
-                                    <User className="h-6 w-6 text-primary"/>
-                                    <div className="text-left">
-                                        <h4 className="font-semibold text-lg">UI/UX Design</h4>
-                                        <p className="text-muted-foreground">
-                                            Designing intuitive and engaging interfaces with a focus on
-                                            usability, accessibility, and seamless user experience.
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        
+                        <div className="gradient-border p-6 card-hover">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 rounded-full bg-primary/10">
+                                    <User className="h-6 w-6 text-primary"/>
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-semibold text-lg">Test Automation & QA</h4>
+                                    <p className="text-muted-foreground">
+                                        Designing use cases and test cases, and driving automation testing
+                                        to uncover and resolve bugs before they reach production.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="gradient-border p-6 card-hover">
                             <div className="flex items-start gap-4">
                                 <div className="p-3 rounded-full bg-primary/10">
@@ -77,13 +75,13 @@ export const AboutMe = () =>{
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg">Projects & Experience</h4>
                                     <p className="text-muted-foreground">
-                                        Hands-on experience through internships, hackathons, and real-world 
-                                        projects that strengthened my problem-solving and teamwork skills.
+                                        Hands-on experience through a production engineering role, hackathons, and
+                                        real-world projects that strengthened my problem-solving and teamwork skills.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
