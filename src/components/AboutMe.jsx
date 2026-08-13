@@ -14,7 +14,7 @@ export const AboutMe = () =>{
                         <h3 className="text-2xl md:text-3xl font-semibold text-left">Passionate Software Engineer</h3>
 
                         <p className="text-muted-foreground">
-                            I am a results-driven <span className="font-semibold text-primary">Software Development Engineer</span> with experience building scalable backend systems and full-stack applications. I focus on writing clean, maintainable code and designing reliable services.
+                            I am a results-driven <span className="font-semibold text-primary">Software Development Engineer</span> with experience building scalable Frontend systems and full-stack applications. I focus on writing clean, maintainable code and designing reliable services.
                         </p>
 
                         <p className="text-muted-foreground">
