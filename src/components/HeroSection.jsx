@@ -21,12 +21,16 @@ export const HeroSection = () =>{
                         <span className="text-gradient ml-2 opacity animate-fade-in-delay-1"> Kumari</span>
                     </h1>
 
+                    <div className="opacity-0 animate-fade-in-delay-2 flex justify-center">
+                        <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">MERN · JavaScript</span>
+                    </div>
+
                     <h2 className="text-xl md:text-2xl font-semibold text-muted-foreground">
                         Full-Stack Software Engineer
                     </h2>
 
                     <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        I build scalable web platforms and cloud-native APIs — fixed an N+1 DB query into a single batched call and owned 57% of merged PRs across a key product. Seeking SDE roles focused on backend engineering and system design.
+                        I build scalable web platforms and cloud-native REST APIs with React, Node.js, Go, and AWS — focused on clean architecture, performance, and reliability. I enjoy solving backend & frontend challenges that improve system quality and scale, from database optimization to API design. Open to SDE roles in full-stack engineering and system design.
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4 flex flex-wrap gap-3 justify-center">

@@ -11,19 +11,20 @@ export const AboutMe = () =>{
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
                     <div className="space-y-6">
-                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Full-Stack Software Engineer</h3>
+                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Full-Stack Software Engineer · approx 1 year Experience</h3>
 
                         <p className="text-muted-foreground">
-                            I'm a <span className="font-semibold text-primary">Software Engineer I at SysAmplify Technologies</span>, where I build scalable frontend systems and full-stack applications with React, TypeScript, Node.js, Go, and AWS (DynamoDB, S3). I architected a React/TypeScript admin platform managing 100,000+ user records and independently own the frontend and QA of an internal Java-based test-automation product, working directly under the CEO's guidance.
+                            I'm a <span className="font-semibold text-primary">Software Engineer I at SysAmplify Technologies</span>, where I build scalable frontend systems and Go/Lambda REST APIs across React, TypeScript, Node.js, and AWS (DynamoDB, S3). Apart from SysAmplify, my primary tech stack is the MERN stack and JavaScript — I have expertise in MERN, SQL, and JavaScript. I designed a reusable, config-driven GenericTable/GenericForm architecture that let 5+ dashboard modules plug in with zero new UI code, and diagnosed an N+1 query bug by replacing a per-record DB call inside a loop with a single batched query.
                         </p>
 
                         <p className="text-muted-foreground">
-                            My background includes production engineering work and hackathons like <span className="font-semibold">Smart India Hackathon</span>, where I helped build <span className="font-semibold">RESQ+</span>, a real-time disaster management tool. I've also solved 500+ problems on LeetCode (1600+ rating) and reached the semifinals of Flipkart GRID 5.0 and the Tata Imagination Challenge — experiences that sharpened my algorithmic problem-solving, system design, and collaboration skills.
+                            On a cross-platform desktop test-automation tool, I owned <span className="font-semibold">57% of merged pull requests</span> and drove half of all development activity over a 4-month release cycle — shipping 5+ core workflows end-to-end and resolving 40% of all bug-fix commits across 100+ tracked defects, including critical data-loss and session-management issues.
                         </p>
 
                         <p className="text-muted-foreground">
-                            I enjoy backend engineering, API design, performance optimization, and scalable architecture — recently cutting a core API's query pattern from N+1 to a single batched call. I'm always open to SDE opportunities where I can keep driving product reliability and scale.
+                            Before SysAmplify, I built a real-time inventory dashboard as a freelance developer that cut manual stock-checking time by 30% for a client, and automated product-listing workflows during an AI product internship, saving 10 hours/week of manual work. I've also solved 500+ problems on LeetCode (1600+ rating) and reached the semifinals of Flipkart GRID 5.0 and the Tata Imagination Challenge.
                         </p>
+
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 button-surface p-4 justify-center md:justify-start">
                             <a href='#contact' className="cosmic-button focus-ring flex items-center gap-2 justify-center">
                                 <Mail className="h-4 w-4" />
@@ -46,7 +47,7 @@ export const AboutMe = () =>{
                                     <h4 className="font-semibold text-lg">Web Development</h4>
                                     <p className="text-muted-foreground">
                                         Building responsive websites and full-stack web applications
-                                        with React, TypeScript, Node.js, and cloud-native REST APIs on AWS.
+                                        with JavaScript and the MERN stack. Expertise in MERN, SQL, and JavaScript.
                                     </p>
                                 </div>
                             </div>
@@ -58,10 +59,10 @@ export const AboutMe = () =>{
                                     <User className="h-6 w-6 text-primary"/>
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Test Automation & QA</h4>
+                                    <h4 className="font-semibold text-lg">Backend & Cloud APIs</h4>
                                     <p className="text-muted-foreground">
-                                        Designing use cases and test cases, and driving automation testing
-                                        to uncover and resolve bugs before they reach production.
+                                        Designing Go/Lambda REST APIs over DynamoDB with cursor-based
+                                        pagination, plus shared internal libraries for DB access and logging.
                                     </p>
                                 </div>
                             </div>
@@ -75,8 +76,8 @@ export const AboutMe = () =>{
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg">Projects & Experience</h4>
                                     <p className="text-muted-foreground">
-                                        Hands-on experience through a production engineering role, hackathons, and
-                                        real-world projects that strengthened my problem-solving and teamwork skills.
+                                        Hands-on experience across a production engineering role, a freelance
+                                        client project, and an AI product internship.
                                     </p>
                                 </div>
                             </div>

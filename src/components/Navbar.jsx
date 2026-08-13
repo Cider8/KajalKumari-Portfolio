@@ -1,4 +1,3 @@
-import { href } from "react-router-dom"
 import { cn } from "../lib/utils"
 import { useEffect, useState, useCallback } from "react"
 
@@ -59,6 +58,8 @@ export const Navbar = () =>{
             const y = el.getBoundingClientRect().top + window.pageYOffset - yOffset;
             window.scrollTo({ top: y, behavior: 'smooth' });
             setIsMenuOpen(false);
+            // update active section immediately for better feedback
+            setActiveSection(targetId);
         }
     }, []);
 
