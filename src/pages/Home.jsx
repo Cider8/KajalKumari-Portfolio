@@ -11,7 +11,9 @@ import { ContactSection } from '../components/ContactSection'
 import { Footer } from '../components/Footer'
 import { TechStack } from '../components/TechStack'
 import { CVSection } from '../components/CVSection'
-import { FreelancingSection } from '../components/FreelancingSection'
+import { ExperienceSection } from '../components/ExperienceSection'
+// import { FreelancingSection } from '../components/FreelancingSection'
+import { AchievementsSection } from '../components/AchievementsSection'
 
 const Home = () => {
   return (
@@ -28,10 +30,13 @@ const Home = () => {
           <HeroSection/>
           <AboutMe/>
           <CVSection/>
+          <ExperienceSection/>
           <SkillsSection/>
           <TechStack/>
           <ProjectsSection/>
-          <FreelancingSection/>
+          {/* Freelancing section commented out per request - keep code for later */}
+          {/* <FreelancingSection/> */}
+          <AchievementsSection/>
           <ContactSection/>
         </main>
 

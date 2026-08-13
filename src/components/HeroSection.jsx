@@ -17,23 +17,27 @@ export const HeroSection = () =>{
                 <div className="space-y-6">
                     <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
                         <span className="opacity-0 animate-fade-in">Hi, I'm </span>
-                        <span className="text-primary opacity-0 animate-fade-in-delay-1">
-                            {" "}
-                            Kajal
-                        </span>
-                        <span className="text-gradient ml-2 opacity animate-fade-in-delay-1">
-                            {" "}
-                            Kumari
-                        </span>
+                        <span className="text-primary opacity-0 animate-fade-in-delay-1"> Kajal</span>
+                        <span className="text-gradient ml-2 opacity animate-fade-in-delay-1"> Kumari</span>
                     </h1>
+
+                    <h2 className="text-xl md:text-2xl font-semibold text-muted-foreground">
+                        Full-Stack Software Engineer
+                    </h2>
+
                     <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        MERN Stack Developer or Full stack Web Developer focused on building clean, accessible, and responsive web applications.
-                        Currently seeking opportunities for Software Development roles and freelance projects.
+                        I build scalable web platforms and cloud-native APIs — fixed an N+1 DB query into a single batched call and owned 57% of merged PRs across a key product. Seeking SDE roles focused on backend engineering and system design.
                     </p>
 
-                    <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                        <a href="#projects" className="cosmic-button focus-ring">
-                            View My Work
+                    <div className="pt-4 opacity-0 animate-fade-in-delay-4 flex flex-wrap gap-3 justify-center">
+                        <a href="#cv" className="cosmic-button focus-ring flex items-center gap-2">
+                            View Resume
+                        </a>
+                        <a href="https://github.com/Cider8" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-color duration-300 focus-ring flex items-center">
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/kajal-kri/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-color duration-300 focus-ring flex items-center">
+                            LinkedIn
                         </a>
                     </div>
                 </div>

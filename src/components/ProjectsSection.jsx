@@ -3,26 +3,49 @@ import { Github } from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "BookStore E-commerce",
-        description: "E-commerce app to browse and buy books across genres with auth and cart.",
-        image: "/projects/project1.png",
-        tags: ["React", "Tailwind CSS", "MongoDB","Node.js","Express","Firebase"],
+        title: "AI Job Tracker",
+        description: "Problem: recruiters and applicants need a centralized view of job applications and AI-driven status insights.\nApproach: Built a React frontend with Node.js/MongoDB backend, integrated Gemini API for resume parsing and ranking, and secured endpoints with JWT. Uses aggregation pipelines for KPIs and role-gated APIs.",
+        image: "/projects/project_ai_job.png",
+        tags: ["React", "Node.js", "MongoDB", "Gemini API", "JWT"],
         demoUrl: "#",
-        githubUrl: "https://github.com/Cider8/Book-Store-app"
+        githubUrl: "https://github.com/Cider8/ai-job-tracker",
+        whatNext: "Add real-time notifications and move parsing to a serverless worker for lower latency and cost."
     },
 
     {
         id: 2,
+        title: "BookStore E-commerce",
+        description: "Problem: users need an easy way to discover and purchase books.\nApproach: Full-stack MERN app with JWT-secured role-gated APIs; used MongoDB aggregation for sales KPIs and Firebase for auth/hosting.",
+        image: "/projects/project1.png",
+        tags: ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express", "Firebase"],
+        demoUrl: "#",
+        githubUrl: "https://github.com/Cider8/Book-Store-app",
+        whatNext: "Implement server-side rendering for SEO and optimize DB indexes for large catalogs."
+    },
+
+    // keep other smaller projects
+    {
+        id: 3,
         title: "Knowtify EdTech",
-        description: "EdTech platform for online tech courses; I contributed backend APIs and DB.",
+        description: "EdTech platform — contributed backend APIs and DB integration.",
         image: "/projects/project2.png",
-        tags: ["React", "Tailwind CSS", "MongoDB","Node.js","Express"],
+        tags: ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express"],
         demoUrl: "https://frontend-main-beige.vercel.app/",
         githubUrl: "https://github.com/Cider8/"
     },
 
     {
-        id: 3,
+        id: 4,
+        title: "AutoSave Blog",
+        description: "Blog app with CRUD and auto-save drafts.",
+        image: "/projects/project4.png",
+        tags: ["React", "Tailwind CSS", "MongoDB", "Node.js", "Express"],
+        demoUrl: "https://blog-mern-tau.vercel.app/",
+        githubUrl: "https://github.com/Cider8/Blog_Mern"
+    },
+
+    {
+        id: 5,
         title: "Book Finder",
         description: "Vite + React app to search books via Open Library API with instant results.",
         image: "/projects/project3.png",
@@ -32,17 +55,7 @@ const projects = [
     },
 
     {
-        id: 4,
-        title: "AutoSave Blog",
-        description: "Blog app with CRUD and auto-save drafts for a smooth writing flow.",
-        image: "/projects/project4.png",
-        tags: ["React", "Tailwind CSS", "MongoDB","Node.js","Express"],
-        demoUrl: " https://blog-mern-tau.vercel.app/",
-        githubUrl: "https://github.com/Cider8/Blog_Mern"
-    },
-
-    {
-        id: 5,
+        id: 6,
         title: "ResQ+ Disaster Response",
         description: "Disaster response app built in a hackathon; I owned backend integration.",
         image: "/projects/project5.png",
@@ -52,7 +65,7 @@ const projects = [
     },
 
     {
-        id: 6,
+        id: 7,
         title: "Course Selling Backend",
         description: "Backend for course selling app: auth, courses.",
         image: "#",
@@ -62,9 +75,9 @@ const projects = [
     },
 
     {
-        id: 7,
+        id: 8,
         title: "Todo App",
-        description: "This is Todo frontend app develop using Html,CSS & Javascript.",
+        description: "Frontend Todo app built using HTML, CSS & JavaScript.",
         image: "/projects/project7.png",
         tags: ["HTML","CSS","JavaScript"],
         demoUrl: "https://todo-app-two-eta-10.vercel.app/",
@@ -112,9 +125,14 @@ export const ProjectsSection = () =>{
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-grow">
                         <h3 className="font-semibold text-lg mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                        <p className="text-sm text-muted-foreground mb-4 flex-grow line-clamp-2 leading-relaxed">
-                        {project.description}
-                        </p>
+                        <div className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed">
+                        {project.description.split("\n").map((line, idx) => (
+                            <p key={idx} className="mb-1 line-clamp-3">{line}</p>
+                        ))}
+                        {project.whatNext && (
+                            <p className="mt-2 text-xs italic text-muted-foreground/80">What I'd improve next: {project.whatNext}</p>
+                        )}
+                        </div>
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2 mb-4">

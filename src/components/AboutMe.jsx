@@ -11,27 +11,18 @@ export const AboutMe = () =>{
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
                     <div className="space-y-6">
-                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Passionate Web Developer</h3>
+                        <h3 className="text-2xl md:text-3xl font-semibold text-left">Passionate Software Engineer</h3>
 
                         <p className="text-muted-foreground">
-                            I am a passionate <span className="font-semibold text-primary">MERN Stack Developer</span> 
-                            with a strong foundation in building dynamic and responsive web applications. 
-                            I enjoy turning ideas into reality through clean, efficient code and intuitive 
-                            user interfaces.
+                            I am a results-driven <span className="font-semibold text-primary">Software Development Engineer</span> with experience building scalable backend systems and full-stack applications. I focus on writing clean, maintainable code and designing reliable services.
                         </p>
 
                         <p className="text-muted-foreground">
-                            My journey includes contributing to impactful projects and participating in 
-                            hackathons like <span className="font-semibold">Smart India Hackathon</span>, 
-                            where I collaborated with a team to develop <span className="font-semibold">RESQ+</span>, 
-                            a real-time disaster management tool. These experiences have strengthened my 
-                            problem-solving mindset, teamwork skills, and ability to perform under pressure.
+                            My background includes contributing to production projects and participating in hackathons like <span className="font-semibold">Smart India Hackathon</span>, where I helped build <span className="font-semibold">RESQ+</span>, a real-time disaster management tool. These experiences strengthened my algorithmic problem-solving, system design, and collaboration skills.
                         </p>
 
                         <p className="text-muted-foreground">
-                            I believe in continuous learning and adaptability, always staying curious about 
-                            emerging technologies. My focus is on delivering meaningful digital solutions 
-                            that not only solve problems but also create seamless experiences for users.
+                            I enjoy working on backend engineering, API design, performance optimization, and scalable architectures. I am actively seeking SDE roles where I can impact product reliability and scalability.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 button-surface p-4 justify-center md:justify-start">
                             <a href='#contact' className="cosmic-button focus-ring flex items-center gap-2 justify-center">

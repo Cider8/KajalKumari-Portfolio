@@ -1,5 +1,5 @@
 export const CVSection = () => {
-    const cvPath = "/Kajal_Kri_Resume.pdf"; 
+    const cvPath = "/Kajal_Resume.pdf"; 
     return (
         <section id="cv" className="py-20 px-6 lg:px-24">
             <div className="container mx-auto max-w-4xl text-center">
@@ -19,6 +19,10 @@ export const CVSection = () => {
         </section>
     );
 }
+
+
+
+
 
 
 

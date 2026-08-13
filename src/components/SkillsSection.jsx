@@ -1,39 +1,46 @@
 import { useState } from "react";
 import { cn } from "../lib/utils";
 
-const skills =[
-    {name: "DSA", level: 75, category:"All"},
-    //frontend
-    {name: "HTML/CSS", level: 80, category : "Frontend"},
-    {name: "JavaScript", level: 80, category : "Frontend"},
-    {name: "React", level: 90, category : "Frontend"},
-    {name: "TypeScript", level: 40, category : "Frontend"},
-    {name: "Tailwind CSS", level: 80, category : "Frontend"},
+const skills = [
+    // Languages
+    { name: "JavaScript", level: 85, category: "Languages" },
+    { name: "TypeScript", level: 70, category: "Languages" },
+    { name: "C++", level: 80, category: "Languages" },
+    { name: "Java", level: 55, category: "Languages" },
+    { name: "Python", level: 60, category: "Languages" },
+    { name: "SQL", level: 75, category: "Languages" },
 
-    //backend
-    {name: "Node.js", level: 85, category : "Backend"},
-    {name: "Express.js", level: 85, category : "Backend"},
-    {name: "MongoDB", level: 90, category : "Backend"},
-    
+    // Frontend
+    { name: "React", level: 90, category: "Frontend" },
+    { name: "HTML/CSS", level: 80, category: "Frontend" },
+    { name: "Tailwind CSS", level: 80, category: "Frontend" },
+    { name: "Vite", level: 70, category: "Frontend" },
+    { name: "React Router", level: 75, category: "Frontend" },
+
+    // Backend & Data
+    { name: "Node.js", level: 85, category: "Backend & Data" },
+    { name: "Express.js", level: 80, category: "Backend & Data" },
+    { name: "MongoDB", level: 90, category: "Backend & Data" },
+    { name: "REST APIs", level: 85, category: "Backend & Data" },
+    { name: "JWT", level: 75, category: "Backend & Data" },
+    { name: "AWS Lambda", level: 60, category: "Backend & Data" },
+    { name: "Go", level: 55, category: "Backend & Data" },
+
     // Tools
-     {name: "Git/GitHub", level: 80, category : "Tools"},
-     {name: "VS Code", level: 95, category: "Tools"},
-     {name: "Postman",level: 85,category: "Tools"},
-     {name: "Power Automate",level: 85, category: "Tools"},
+    { name: "Git", level: 85, category: "Tools" },
+    { name: "GitHub Actions", level: 65, category: "Tools" },
+    { name: "Postman", level: 80, category: "Tools" },
+    { name: "VS Code", level: 95, category: "Tools" },
+    { name: "Eclipse IDE", level: 60, category: "Tools" },
+    { name: "Power Automate", level: 80, category: "Tools" },
 
-    //language
-     {name: "C++", level: 85, category: "Language"},
-     {name: "SQL", level: 80, category: "Language"},
-     {name: "Java", level: 55, category: "Language"},
-
-     //all
-     {name: "Operating System", level: 70 , category: "All"},
-     {name: "OOP", level: 75, category: "All"},
-
-    
+    // Concepts
+    { name: "Data Structures & Algorithms", level: 75, category: "Concepts" },
+    { name: "OOP", level: 75, category: "Concepts" },
+    { name: "Operating Systems", level: 70, category: "Concepts" },
 ];
 
-const categories = ["All","Frontend","Backend","Tools","Language"]
+const categories = ["All", "Languages", "Frontend", "Backend & Data", "Tools", "Concepts"]
 
 
 export const SkillsSection = () =>{
