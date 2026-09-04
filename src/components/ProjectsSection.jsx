@@ -2,7 +2,17 @@ import { Github } from "lucide-react";
 
 const projects = [
     {
-        id: 1,
+    id: 1,
+    title: "AI Code Reviewer",
+    description: "Problem: developers want structured, actionable feedback on code without waiting on a human reviewer.\nApproach: Full-stack platform with a React frontend and Python/FastAPI backend over MongoDB (Beanie ODM). Gemini analyses submitted code and returns structured JSON — bugs, security issues, performance notes, and complexity scores. Added a contextual chat so users can ask follow-up questions about a review, backed by capped conversation history and a per-user daily quota to control API cost. Endpoints are JWT-secured with per-request ownership checks that return 404 rather than 403, so session IDs can't be probed.",
+    image: "/projects/project_ai_code.png",
+    tags: ["React", "FastAPI", "Python", "MongoDB", "Gemini API", "JWT"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/Cider8/AI_CODE_REVIEWER",
+    whatNext: "Move to bring-your-own-key so each user supplies their own Gemini credentials — encrypted at rest and scoped per account — instead of sharing a single server-side key. Also planning streamed review output and semantic search across past reviews using embeddings."
+    },
+    {
+        id: 2,
         title: "AI Job Tracker",
         description: "Problem: recruiters and applicants need a centralized view of job applications and AI-driven status insights.\nApproach: Built a React frontend with Node.js/MongoDB backend, integrated Gemini API for resume parsing and ranking, and secured endpoints with JWT. Uses aggregation pipelines for KPIs and role-gated APIs.",
         image: "/projects/project_ai_job.png",
@@ -13,7 +23,7 @@ const projects = [
     },
 
     {
-        id: 2,
+        id: 3,
         title: "BookStore E-commerce",
         description: "Problem: users need an easy way to discover and purchase books.\nApproach: Full-stack MERN app with JWT-secured role-gated APIs; used MongoDB aggregation for sales KPIs and Firebase for auth/hosting.",
         image: "/projects/project1.png",
@@ -25,7 +35,7 @@ const projects = [
 
     // keep other smaller projects
     {
-        id: 3,
+        id: 4,
         title: "Knowtify EdTech",
         description: "EdTech platform — contributed backend APIs and DB integration.",
         image: "/projects/project2.png",
@@ -35,7 +45,7 @@ const projects = [
     },
 
     {
-        id: 4,
+        id: 5,
         title: "AutoSave Blog",
         description: "Blog app with CRUD and auto-save drafts.",
         image: "/projects/project4.png",
@@ -45,7 +55,7 @@ const projects = [
     },
 
     {
-        id: 5,
+        id: 6,
         title: "Book Finder",
         description: "Vite + React app to search books via Open Library API with instant results.",
         image: "/projects/project3.png",
@@ -55,7 +65,7 @@ const projects = [
     },
 
     {
-        id: 6,
+        id: 7,
         title: "ResQ+ Disaster Response",
         description: "Disaster response app built in a hackathon; I owned backend integration.",
         image: "/projects/project5.png",
@@ -65,7 +75,7 @@ const projects = [
     },
 
     {
-        id: 7,
+        id: 8,
         title: "Course Selling Backend",
         description: "Backend for course selling app: auth, courses.",
         image: "#",
@@ -75,7 +85,7 @@ const projects = [
     },
 
     {
-        id: 8,
+        id: 9,
         title: "Todo App",
         description: "Frontend Todo app built using HTML, CSS & JavaScript.",
         image: "/projects/project7.png",
